@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% if app.user %}
+    <h1>Créer un nouveau produit</h1>
+
+    {{form(form)}}
+
+			{% else %}
+<h2>Vous devez vous connecter pour créer un produit</h2>
+			{% endif %}
+
+{% endblock %}
+
+{% block page_title %}Nouveau produit{% endblock %}

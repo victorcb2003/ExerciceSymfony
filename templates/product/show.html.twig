@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}Détail du produit{% endblock %}
+
+{% block body %}
+<div class="table-container">
+    <table class="product-table">
+    <tread>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Size</th>
+        </tr>
+    </tread>
+    <tbody>
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.size }}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+{% if app.user and (product.userid == app.user.userIdentifier) %}
+        <a class="btn-edit" href="{{ path('product_edit', {'id': product.id}) }}">Modifier</a>
+        <a class="btn-delete" href="{{ path('product_delete', {'id': product.id}) }}">Supprimer</a>
+{% endif %}
+
+{% endblock %}

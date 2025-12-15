@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}Supprimer le produit{% endblock %}
+
+{% block body %}
+<form class="delete-form" method="post" action="{{ path('product_delete', {'id': id}) }}">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ id) }}">
+    <button class="btn-delete">Supprimer</button>
+    <a href="{{ path('product_show', {'id': id}) }}">Annuler</a>
+</form>
+
+{% endblock %}

@@ -1,3 +1,130 @@
 body {
-    background-color: skyblue;
+    background-color: white;
+    padding: 20px;
 }
+
+/* Product table styles */
+.table-container {
+    overflow-x: auto;
+    margin-top: 12px;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.product-table thead th {
+    text-align: left;
+    padding: 12px 10px;
+    background: #f5f7fa;
+    color: #333;
+    font-weight: 600;
+    border-bottom: 2px solid #e6e9ef;
+}
+
+.product-table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #eef0f4;
+    vertical-align: middle;
+    color: #444;
+}
+
+.product-table tbody tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+.product-table tbody tr:nth-child(even) {
+    background: #fbfcfe;
+}
+
+.product-table tbody tr:hover {
+    background: #f0f4ff;
+}
+
+.product-link {
+    color: #1a73e8;
+    text-decoration: none;
+}
+.product-link:hover {
+    text-decoration: underline;
+}
+
+.btn-new {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #1a73e8;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.btn-new:hover { background: #155ab6 }
+
+.empty {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}
+
+@media (max-width: 600px) {
+    .product-table thead { display: none; }
+    .product-table, .product-table tbody, .product-table tr, .product-table td { display: block; width: 100%; }
+    .product-table td { box-sizing: border-box; padding-left: 50%; position: relative; }
+    .product-table td::before { position: absolute; left: 16px; top: 10px; font-weight:600; }
+    .product-table td:nth-of-type(1)::before { content: "Nom"; }
+    .product-table td:nth-of-type(2)::before { content: "Description"; }
+    .product-table td:nth-of-type(3)::before { content: "Tailles"; }
+    .product-table td:nth-of-type(4)::before { content: "Utilisateur"; }
+}
+
+/* Edit / Delete button styles */
+.btn-edit {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #2e7d32; /* green */
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 8px;
+}
+.btn-edit:hover { background: #276a28 }
+
+.btn-delete, .btn-danger {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #d32f2f; /* red */
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.btn-delete:hover, .btn-danger:hover { background: #b12727 }
+
+.product-form {
+    max-width: 720px;
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(31, 41, 55, 0.06);
+}
+.product-form input[type="submit"], .product-form button[type="submit"] {
+    background: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.product-form input[type="submit"]:hover, .product-form button[type="submit"]:hover {
+    background: #155ab6;
+}
+
+.delete-form {
+    margin: 20px 0;
+}
+.delete-form .btn-delete { margin-right: 8px }
