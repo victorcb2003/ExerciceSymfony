@@ -81,9 +81,8 @@ final class ProductController extends AbstractController
                 'Le Produit a été modifié'
             );
 
-            return $this->render('product/show.html.twig', [
-                "product" => $product,
-            ]);
+            // Redirect to the show page after edit to have canonical URL and avoid re-submission
+            return $this->redirectToRoute('product_show', ['id' => $product->getId()]);
         }
 
         return $this->render('product/edit.html.twig', [

@@ -15,7 +15,7 @@ class ProductType extends AbstractType
         $builder
             ->add('name')
             ->add('description')
-            ->add('size')
+            ->add('price')
             ->add('save',SubmitType::class)
         ;
     }

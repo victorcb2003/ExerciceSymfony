@@ -7,16 +7,16 @@
     <table class="product-table">
     <tread>
         <tr>
-            <th>Name</th>
+            <th>Nom</th>
             <th>Description</th>
-            <th>Size</th>
+            <th>Prix</th>
         </tr>
     </tread>
     <tbody>
         <tr>
             <td>{{ product.name }}</td>
             <td>{{ product.description }}</td>
-            <td>{{ product.size }}</td>
+            <td>{{ product.price ? (product.price|number_format(2, ',', ' ') ~ ' €') : '' }}</td>
         </tr>
     </tbody>
 </table>

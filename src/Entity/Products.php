@@ -24,8 +24,8 @@ class Products
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\Column]
-    private ?int $size = null;
+    #[ORM\Column(type: Types::FLOAT)]
+    private ?float $price = null;
 
     public function getId(): ?int
     {
@@ -68,14 +68,14 @@ class Products
         return $this;
     }
 
-    public function getSize(): ?int
+    public function getPrice(): ?float
     {
-        return $this->size;
+        return $this->price;
     }
 
-    public function setSize(int $size): static
+    public function setPrice(float $price): static
     {
-        $this->size = $size;
+        $this->price = $price;
 
         return $this;
     }
